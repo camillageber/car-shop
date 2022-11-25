@@ -16,7 +16,7 @@ class CarController {
   }
 
   public async createCar() {
-    console.log('entrei na controller');
+    // console.log('entrei na controller');
     const car: ICar = {
       model: this.req.body.model,
       year: this.req.body.year,
@@ -26,12 +26,24 @@ class CarController {
       doorsQty: this.req.body.doorsQty,
       seatsQty: this.req.body.seatQty,
     };
-
-    console.log('obj', car);
-
+    // console.log('obj', car);
     const newCar = await this.service.createCar(car);
-    console.log('novo carro', newCar);
+    // console.log('novo carro', newCar);
     return this.res.status(201).json(newCar);
+  }
+
+  public async findAllCars() {
+    const allCars = await this.service.findAllCars();
+    return this.res.status(200).json(allCars);
+  }
+
+  public async findCarById() {
+    try {
+      const car = await this.service.findCarById(this.req.params.id);
+      return this.res.status(200).json(car);
+    } catch (err) {
+      this.next(err);
+    }
   }
 }
 
