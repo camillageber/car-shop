@@ -1,11 +1,21 @@
 import { Router } from 'express';
 import MotorcycleController from '../Controllers/MotorcycleController';
 
-const MotocycleRouter = Router();
+const MotorcycleRouter = Router();
 
-MotocycleRouter.post(
+MotorcycleRouter.post(
   '/motorcycles',
   (req, res, next) => new MotorcycleController(req, res, next).createMoto(),
 );
 
-export default MotocycleRouter;
+MotorcycleRouter.get(
+  '/motorcycles/:id',
+  (req, res, next) => new MotorcycleController(req, res, next).findMotoById(),
+);
+
+MotorcycleRouter.get(
+  '/motorcycles',
+  (req, res, next) => new MotorcycleController(req, res, next).findAllMotos(),
+);
+
+export default MotorcycleRouter;

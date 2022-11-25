@@ -1,13 +1,13 @@
 import express from 'express';
 import CarRouter from './Routes/CarRouter';
 import ErrorHandler from './Middlewares/ErrorHandler';
-import MotocycleRouter from './Routes/MotorcycleRouter';
+import MotorcycleRouter from './Routes/MotorcycleRouter';
 
 const app = express();
 app.use(express.json());
 
 app.use(CarRouter);
-app.use(MotocycleRouter);
+app.use(MotorcycleRouter);
 app.use(ErrorHandler.handle);
 
 export default app;
