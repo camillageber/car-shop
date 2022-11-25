@@ -6,7 +6,7 @@ interface ICar {
   status?: boolean,
   buyValue: number,
   doorsQty: number,
-  seatQty: number,
+  seatsQty: number,
 }
 
 export default ICar;
