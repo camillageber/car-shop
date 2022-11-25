@@ -10,7 +10,7 @@ class Car {
   private doorsQty: number;
   private seatQty: number;
 
-  constructor({id, model, year, color, status, buyValue, doorsQty, seatQty}: ICar) {
+  constructor({ id, model, year, color, status, buyValue, doorsQty, seatQty }: ICar) {
     this.id = id;
     this.model = model;
     this.year = year;
@@ -80,7 +80,6 @@ class Car {
   public setSeatQty(seatQty: number) {
     this.seatQty = seatQty;
   }
-
 }
 
 export default Car;
