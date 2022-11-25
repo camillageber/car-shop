@@ -18,4 +18,9 @@ MotorcycleRouter.get(
   (req, res, next) => new MotorcycleController(req, res, next).findAllMotos(),
 );
 
+MotorcycleRouter.put(
+  '/motorcycles/:id',
+  (req, res, next) => new MotorcycleController(req, res, next).updateMoto(),
+);
+
 export default MotorcycleRouter;
