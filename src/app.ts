@@ -4,6 +4,7 @@ import ErrorHandler from './Middlewares/ErrorHandler';
 import MotocycleRouter from './Routes/MotorcycleRouter';
 
 const app = express();
+app.use(express.json());
 
 app.use(CarRouter);
 app.use(MotocycleRouter);
